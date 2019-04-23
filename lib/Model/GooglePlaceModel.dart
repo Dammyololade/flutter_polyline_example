@@ -1,4 +1,4 @@
-part of kobo_mobile_core;
+
 
 class GooglePlaceModel {
 
@@ -82,7 +82,7 @@ class Result {
     plusCode = json['plus_code'] != null
         ? new PlusCode.fromJson(json['plus_code'])
         : null;
-    rating = json['rating'];
+    //rating = json['rating'];
     reference = json['reference'];
     if (json['reviews'] != null) {
       reviews = new List<Reviews>();
@@ -158,16 +158,12 @@ class AddressComponents {
 
 class Geometry {
   GooglePlaceLocation location;
-  Viewport viewport;
 
-  Geometry({this.location, this.viewport});
+  Geometry({this.location});
 
   Geometry.fromJson(Map<String, dynamic> json) {
     location = json['location'] != null
         ? new GooglePlaceLocation.fromJson(json['location'])
-        : null;
-    viewport = json['viewport'] != null
-        ? new Viewport.fromJson(json['viewport'])
         : null;
   }
 
@@ -175,9 +171,6 @@ class Geometry {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.location != null) {
       data['location'] = this.location.toJson();
-    }
-    if (this.viewport != null) {
-      data['viewport'] = this.viewport.toJson();
     }
     return data;
   }
@@ -202,25 +195,6 @@ class GooglePlaceLocation {
   }
 }
 
-class Viewport {
-  Northeast northeast;
-  Southwest southwest;
-
-  Viewport({this.northeast, this.southwest});
-
-  Viewport.fromJson(Map<String, dynamic> json) {
-    northeast = json['northeast'] != null
-        ? new Northeast.fromJson(json['northeast'])
-        : null;
-    southwest = json['southwest'] != null
-        ? new Southwest.fromJson(json['southwest'])
-        : null;
-  }
-
-  Map<String, dynamic> toJson() {
-    
-  }
-}
 
 class Photos {
   int height;

@@ -1,8 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:kobo_mobile_core/kobo_mobile_core.dart';
-import 'package:kobosquad/bloc/GooglePlaceBloc.dart';
+
+import 'Bloc/GooglePlaceBloc.dart';
+import 'Model/PredictionModel.dart';
+
 
 class GooglePlacesSearchRequest extends StatefulWidget
 {
@@ -61,7 +63,7 @@ class _GooglePlacesSearchRequestState extends State<GooglePlacesSearchRequest>
                         controller: _searchController,
                         maxLines: 1,
                         decoration: InputDecoration(
-                          hintText: KoboLocalizations.value(LocaleConfig.SEARCH_HERE),
+                          hintText: "Search here",
                           border: InputBorder.none
                         ),
                         autofocus: true,

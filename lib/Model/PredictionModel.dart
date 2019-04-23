@@ -1,4 +1,4 @@
-part of kobo_mobile_core;
+
 
 class PredictionModel {
   List<Predictions> predictions;
