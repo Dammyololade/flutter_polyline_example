@@ -6,7 +6,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 class GMapService
 {
   /// add your apikey here
-  static String apiKey = "AIzaSyCeGZSiHHrzghqeOf0SZylJS57qzOs9438";
+  static String apiKey = "Your APi Key";
 
   /// google places autocomplete api
   /// for seaching places
